@@ -1,0 +1,10 @@
+@use '../colors' as *;
+
+@mixin mobile-text {
+	font-family: 'Barlow', sans-serif;
+	width: 32.7rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	color: $light-grayish-blue;
+	text-align: center;
+}
