@@ -1,8 +1,10 @@
 @use './colors' as *;
 @use './mixins/flex' as *;
+@use './mixins/box-text' as *;
 @use './mixins/center-container' as *;
+@use './mixins/bg-img' as *;
 
-@media (min-width: 1400px) {
+@media (min-width: 1280px) {
 	.home {
 		background-image: url('../../assets/home/./background-home-desktop.jpg');
 	}
@@ -11,7 +13,8 @@
 		position: fixed;
 		right: 0;
 		top: 4rem;
-		margin-left: 0;
+		max-width: 150rem;
+
 		&__navbar {
 			width: 60%;
 		}
@@ -38,12 +41,6 @@
 		z-index: 2;
 	}
 
-	.main {
-		flex-direction: row;
-		align-items: end;
-		@include center;
-	}
-
 	.header {
 		&__home {
 			margin-left: 13.1rem;
@@ -54,15 +51,95 @@
 				align-self: flex-start;
 			}
 			&-text {
-				font-size: 1.8rem;
-				line-height: 3.2rem;
-				text-align: left;
+				@include desktop-text;
+				
 			}
 			&-box {
 				width: 27.4rem;
 				height: 27.4rem;
 				margin-right: 13.1rem;
 				margin-bottom: 13.1rem;
+			}
+		}
+	}
+
+	.main__home {
+		flex-direction: row;
+		align-items: flex-end;
+		height: 100vh;
+	}
+
+	////////////////// moon
+	/// /////////////////////////////////
+
+	.moon {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		background-image: url('../../assets/destination/background-destination-desktop.jpg');
+		@include center;
+		&__header {
+			margin-top: 21.2rem;
+
+			&-heading {
+				font-size: 2.8rem;
+				margin-left: 16.5rem;
+				letter-spacing: 0.472rem;
+				margin-bottom: 9.7rem;
+				span {
+					padding-right: 1.7rem;
+				}
+			}
+			&-img {
+				margin-left: 20.8rem;
+				width: 44.5rem;
+				margin-bottom: 0;
+			}
+		}
+		&__main {
+			place-items: start;
+			grid-template-rows: 31rem;
+			margin-left: 11.7rem;
+			&-destination {
+				grid-column: 1/3;
+				grid-row: 2/3;
+				align-self: self-start;
+				margin-bottom: 0;
+				.active::before {
+					bottom: -1.2rem;
+				}
+			}
+			&-heading {
+				text-align: left;
+				font-size: 10rem;
+			}
+			&-text {
+				@include desktop-text;
+				text-align: left;
+			}
+			&-box {
+				grid-column: 1/3;
+				grid-row: 2/3;
+				margin-top: 7.1rem;
+				margin-bottom: 0;
+			}
+			&-box::after {
+				width: 44.4rem;
+			}
+			&-box-text {
+				align-self: flex-start;
+				grid-column: 1/3;
+				grid-row: 2/3;
+				margin-top: 40rem;
+				gap: 1.2rem;
+				text-align: left;
+			}
+			&-box-text--right {
+				grid-column: 2/3;
+				margin-bottom: 0;
+			}
+
+			&-h3 {
+				text-align: left;
 			}
 		}
 	}

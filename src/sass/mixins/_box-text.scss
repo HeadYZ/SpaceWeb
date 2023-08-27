@@ -8,3 +8,16 @@
 	color: $light-grayish-blue;
 	text-align: center;
 }
+
+@mixin tablet-text {
+	width: 57.3rem;
+	font-size: 1.6rem;
+	line-height: 2.8rem;
+}
+
+@mixin desktop-text {
+	width: 44.4rem;
+	font-size: 1.8rem;
+	line-height: 3.2rem;
+	text-align: left;
+}
