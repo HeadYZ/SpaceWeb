@@ -16,7 +16,7 @@
   <script type="module" defer src="./src/js/main.js"></script>
 </head>
 
-<body class="des moon">
+<body class="destination moon">
   <nav class="nav">
     <a href="#"> <img src="./assets/shared/logo.svg" class="nav__logo" alt="Space tourism logo"></a>
     <button class="nav__burger"> <img src="./assets/shared/icon-hamburger.svg" alt="Navigation icon"></button>
@@ -32,30 +32,33 @@
     </div>
   </nav>
 
-  <header class="moon__header">
-    <h1 class="moon__header-heading"><span>01</span> Pick your destination</h1>
-    <div><img src="./assets/destination/image-moon.webp" class="moon__header-img" alt="moon"></div>
+  <header class="destination__header">
+    <h1 class="destination__header-heading"><span>01</span> Pick your destination</h1>
+    <div><img src="./assets/destination/image_moon.webp" class="destination__header-img" alt="moon"></div>
 
   </header>
-  <main class="moon__main">
-    <div class="moon__main-destination"><a href="#" class="active">Moon</span>
-        <a href="#">Mars</span>
-          <a href="#">Europa</span>
-            <a href="#">Titan</span>
+  <main class="destination__main">
+    <div class="destination__selections">
+      <a href="#" class="active destination__selections-item">Moon</a>
+      <a href="./destination-mars.html" class="destination__selections-item">Mars</a>
+      <a href="./destination-europa.html" class="destination__selections-item">Europa</a>
+      <a href="./destination-titan.html" class="destination__selections-item">Titan</a>
     </div>
-    <div class="moon__main-box">
-      <h2 class="moon__main-heading">Moon</h2>
-      <p class="moon__main-text"> See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+    <div class="destination__main-box destination__information">
+      <h2 class="destination__main-heading">Moon</h2>
+      <p class="destination__main-text"> See our planet as you’ve never seen it before. A perfect relaxing trip away to
+        help
         regain perspective and come back refreshed. While you’re there, take in some history
         by visiting the Luna 2 and Apollo 11 landing sites.</p>
     </div>
 
-    <div class="moon__main-box-text moon__main-box-text moon__main-box-text--left">
-      <h3 class="moon__main-h3"> Avg. distance</h3>
+    <div
+      class="destination__main-box-text destination__main-box-text destination__main-box-text--left destination__distance">
+      <h3 class="destination__main-h3"> Avg. distance</h3>
       <p> 384,400 km</p>
     </div>
-    <div class="moon__main-box-text moon__main-box-text--right">
-      <h3 class="moon__main-h3"> Est. travel time</h3>
+    <div class="destination__main-box-text destination__main-box-text--right destination__travel-time">
+      <h3 class="destination__main-h3"> Est. travel time</h3>
       <p> 3 days</p>
     </div>
 

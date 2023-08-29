@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Space tourism website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/sass/main.scss">
+  <script type="module" defer src="./src/js/main.js"></script>
 </head>
-<body>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+<body class="destination">
 
-  01 Pick your destination
+  <nav class="nav">
+    <a href="#"> <img src="./assets/shared/logo.svg" class="nav__logo" alt="Space tourism logo"></a>
+    <button class="nav__burger"> <img src="./assets/shared/icon-hamburger.svg" alt="Navigation icon"></button>
+    <div class="nav__navbar">
+      <button class="nav__burger-close"> <img src="./assets/shared/icon-close.svg" alt="Navigation icon"></button>
+      <ul class="nav__list">
+        <li class="nav__list-item "><a href="./index.html" class="nav__list-link active "><span>00</span> Home</a></li>
+        <li class="nav__list-item"><a href="./destination-moon.html" class="nav__list-link"><span>01</span>
+            Destination</a></li>
+        <li class="nav__list-item"><a href="#" class="nav__list-link"><span>02</span> Crew</a></li>
+        <li class="nav__list-item"><a href="#" class="nav__list-link"><span>03</span> Technology</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  Moon
-  Mars
-  Europa
-  Titan
+  <header class="destination__header">
+    <h1 class="destination__header-heading"><span>01</span> Pick your destination</h1>
+    <div><img src="./assets/destination/image_europa.webp" class="destination__header-img" alt="europa"></div>
 
-  Europa
+  </header>
+  <main class="destination__main">
+    <div class="destination__main-destination"><a href="./destination-moon.html">Moon</span>
+        <a href="./destination-mars.html">Mars</span>
+          <a href="#" class="active">Europa</span>
+            <a href="./destination-titan.html">Titan</span>
+    </div>
+    <div class="destination__main-box">
+      <!-- <h2 class="destination__main-heading">Europa</h2>
+      <p class="destination__main-text">The smallest of the four Galilean moons orbiting Jupiter, Europa is a
+        winter lover’s dream. With an icy surface, it’s perfect for a bit of
+        ice skating, curling, hockey, or simple relaxation in your snug
+        wintery cabin.</p>
+    </div>
 
-  The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
-  winter lover’s dream. With an icy surface, it’s perfect for a bit of 
-  ice skating, curling, hockey, or simple relaxation in your snug 
-  wintery cabin.
+    <div class="destination__main-box-text destination__main-box-text destination__main-box-text--left">
+      <h3 class="destination__main-h3"> Avg. distance</h3>
+      <p>628 mil. km</p>
+    </div>
+    <div class="destination__main-box-text destination__main-box-text--right">
+      <h3 class="destination__main-h3"> Est. travel time</h3>
+      <p>3 years</p> -->
+    </div>
 
-  Avg. distance
-  628 mil. km
+  </main>
+  <div class="overlay"></div>
 
-  Est. travel time
-  3 years
 </body>
+
 </html>
