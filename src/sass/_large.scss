@@ -99,8 +99,11 @@
 			grid-row: 2/3;
 			align-self: self-start;
 			margin-bottom: 0;
-			.active::before {
-				bottom: -1.2rem;
+			&-item::before {
+				transition: opacity 0.5s;
+			}
+			&-item:hover::before {
+				opacity: 0.5;
 			}
 		}
 		&__main {

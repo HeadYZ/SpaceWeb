@@ -188,21 +188,23 @@ body {
 		margin-bottom: 2rem;
 		text-transform: uppercase;
 		letter-spacing: 0.236rem;
-		a {
+		&-item {
+			position: relative;
 			color: $light-grayish-blue;
 			text-decoration: none;
 		}
-		a.active {
-			position: relative;
-		}
-		.active::before {
+		&-item::before {
 			content: '';
+			opacity: 0;
 			position: absolute;
 			left: 0;
 			bottom: -0.8rem;
 			height: 0.3rem;
 			width: 100%;
 			background-color: $white;
+		}
+		&-item.active::before {
+			opacity: 1;
 		}
 	}
 	&__main {

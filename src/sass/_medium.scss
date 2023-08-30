@@ -122,7 +122,7 @@
 			width: 28.55rem;
 			font-size: 1.6rem;
 			margin-bottom: 3.2rem;
-			.active::before {
+			&-item::before {
 				bottom: -1.2rem;
 			}
 		}
