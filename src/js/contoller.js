@@ -7,10 +7,10 @@ import crewView from './Views/crewView'
 
 const init = () => {
 	navigationView.addHandlerToggleNav()
-	if (window.location.pathname.slice(1, -5) === 'destinations') {
+	if (window.location.pathname.includes('destinations')) {
 		destinationView.addHandlerRender(model.destinationInformation)
 	}
-	if (window.location.pathname.slice(1, -5) === 'crew') {
+	if (window.location.pathname.includes('crew')) {
 		crewView.addHandlerRender(model.crewInformation)
 	}
 }
