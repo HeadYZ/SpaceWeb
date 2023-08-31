@@ -104,9 +104,8 @@
 
 			&-heading {
 				align-self: start;
-				font-size: 2rem;
 				margin-left: 3.85rem;
-				letter-spacing: 0.338rem;
+				@include tablet-heading;
 				span {
 					padding-right: 1.1rem;
 				}
@@ -154,6 +153,48 @@
 			&-box-text--left,
 			&-box-text--right {
 				margin-bottom: 0;
+			}
+		}
+	}
+	//////////////////////////crew
+	/// //////////////////////////////
+			
+	.crew {
+		background-image: url('../../assets/crew/background-crew-tablet.jpg');
+		&__main {
+			gap: 6rem;
+			padding: 0;
+		}
+		&__heading {
+			align-self: start;
+			margin-top: 5.2rem;
+			margin-left: 3.85rem;
+			@include tablet-heading;
+		}
+		&__box {
+			order: 2;
+			width: 45.6rem;
+			max-height: 53.2rem;
+			border-bottom: none;
+			&-img {
+				max-height: 53.2rem;
+			}
+		}
+		&__slider {
+			order: 1;
+		}
+		&__content {
+			width: 45.8rem;
+			&-position {
+				font-size: 2.4rem;
+				opacity: 49.94%;
+			}
+			&-name {
+				font-size: 4rem;
+			}
+			&-text {
+				@include tablet-text;
+				width: auto;
 			}
 		}
 	}

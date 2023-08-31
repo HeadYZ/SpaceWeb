@@ -1,8 +1,3 @@
-import moonImg from '../../../assets/destination/image_moon.webp'
-import europaImg from '../../../assets/destination/image_europa.webp'
-import marsImg from '../../../assets/destination/image_mars.webp'
-import titanImg from '../../../assets/destination/image_titan.webp'
-
 class DestinationView {
 	#destinations = document.querySelector('.destination__selections')
 	#destinationTime = document.querySelector('.destination__travel-time')
@@ -29,11 +24,8 @@ class DestinationView {
 
 				const [desInformation, desDistance, desTravelTime] = this.#generateMarkup(destinationData)
 
-				const destinationImages = [moonImg, europaImg, marsImg, titanImg]
-
-				this.#destinationImg.src = destinationImages.filter(img => {
-					return img.includes(`${destinationData.destination.toLocaleLowerCase()}`)
-				})
+				this.#destinationImg.src = destinationData.img
+				this.#destinationImg.alt = destinationData.destination
 				this.#destinationTime.innerHTML = desTravelTime
 				this.#destinationDistance.innerHTML = desDistance
 				this.#destinationInfo.innerHTML = desInformation

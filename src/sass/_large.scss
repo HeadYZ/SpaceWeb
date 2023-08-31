@@ -80,9 +80,9 @@
 			margin-top: 21.2rem;
 
 			&-heading {
-				font-size: 2.8rem;
+				@include desktop-heading;
 				margin-left: 16.5rem;
-				letter-spacing: 0.472rem;
+
 				margin-bottom: 9.7rem;
 				span {
 					padding-right: 1.7rem;
@@ -112,12 +112,11 @@
 			margin-left: 11.7rem;
 
 			&-heading {
-				text-align: left;
 				font-size: 10rem;
+				text-align: left;
 			}
 			&-text {
 				@include desktop-text;
-				text-align: left;
 			}
 			&-box {
 				grid-column: 1/3;
@@ -143,6 +142,78 @@
 
 			&-h3 {
 				text-align: left;
+			}
+		}
+	}
+
+	/////////////////////////////// crew
+	/// ////////////////////////////
+	/// /////////////////////////
+
+	.crew {
+		background-image: url('../../assets/crew/background-crew-desktop.jpg');
+
+		&__main {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			height: 100vh;
+			@include center;
+			padding: 0 16.5rem;
+			gap: 0;
+		}
+		&__heading {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			align-self: center;
+			text-align: left;
+			@include desktop-heading;
+			margin: 0;
+			margin-top: 11.1rem;
+		}
+		&__box {
+			grid-column: 2/3;
+			grid-row: 1/4;
+			align-self: end;
+			order: 0;
+			max-height: 71.5rem;
+			height: fit-content;
+			width: 100%;
+			overflow: hidden;
+			&-img {
+				object-fit: contain;
+				max-height: fit-content;
+				min-height: 100%;
+				width: 100%;
+			}
+		}
+		&__slider {
+			grid-column: 1/2;
+			grid-row: 3/4;
+			width: 13.2rem;
+			order: 0;
+			margin-bottom: 2rem;
+			&-item {
+				width: 1.5rem;
+				height: 1.5rem;
+				cursor: pointer;
+			}
+		}
+		&__content {
+			grid-column: 1/2;
+			grid-row: 2/3;
+			margin-top: 2.3rem;
+			text-align: left;
+			&-position {
+				font-size: 3.2rem;
+				opacity: 50.42%;
+			}
+			&-name {
+				white-space: nowrap;
+				font-size: 5.6rem;
+				padding: 1.5rem 0;
+			}
+			&-text {
+				@include desktop-text;
 			}
 		}
 	}

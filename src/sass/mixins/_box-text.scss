@@ -21,3 +21,27 @@
 	line-height: 3.2rem;
 	text-align: left;
 }
+
+@mixin mobile-heading {
+	font-size: 1.6rem;
+	letter-spacing: 0.27rem;
+	text-transform: uppercase;
+	font-weight: 400;
+	text-align: center;
+}
+
+@mixin mobile-heading-span {
+	font-weight: bold;
+	opacity: 25%;
+}
+
+@mixin tablet-heading {
+	font-size: 2rem;
+	letter-spacing: 0.338rem;
+}
+
+@mixin desktop-heading {
+	font-size: 2.8rem;
+	letter-spacing: 0.472rem;
+	text-align: left;
+}
