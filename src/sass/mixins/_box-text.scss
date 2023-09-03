@@ -7,6 +7,7 @@
 	line-height: 2.5rem;
 	color: $light-grayish-blue;
 	text-align: center;
+	font-weight: 400;
 }
 
 @mixin tablet-text {
@@ -33,9 +34,12 @@
 @mixin mobile-heading-span {
 	font-weight: bold;
 	opacity: 25%;
+	padding-right: 1.6rem;
 }
 
 @mixin tablet-heading {
+	margin-top: 5.2rem;
+	margin-left: 3.85rem;
 	font-size: 2rem;
 	letter-spacing: 0.338rem;
 }

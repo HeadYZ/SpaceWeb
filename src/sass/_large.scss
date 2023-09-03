@@ -217,4 +217,54 @@
 			}
 		}
 	}
+
+	//////////////////////////techonlogy
+	/// /////////////////////////////////
+
+	.technology {
+		background-image: url('../../assets/technology/background-technology-desktop.jpg');
+		&__main {
+			@include center;
+			&-heading {
+				@include desktop-heading;
+				margin: 21.2rem 0 0 16.65rem;
+			}
+			&-box {
+				flex-direction: row;
+				justify-content: space-between;
+				gap: 0;
+			}
+			&-package {
+				display: flex;
+				justify-content: flex-end;
+				order: 1;
+				width: 515px;
+				&-img {
+					width: 51.5rem;
+					max-height: 52.7rem;
+				}
+			}
+			&-slider {
+				flex-direction: column;
+				gap: 3.2rem;
+				margin-left: 16.5rem;
+				&-item {
+					width: 8rem;
+					height: 8rem;
+					font-size: 3.2rem;
+				}
+			}
+			&-content {
+				text-align: left;
+
+				&-name {
+					white-space: nowrap;
+					font-size: 5.6rem;
+				}
+				&-text {
+					@include desktop-text;
+				}
+			}
+		}
+	}
 }

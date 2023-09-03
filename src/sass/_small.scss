@@ -275,7 +275,6 @@ body {
 
 		span {
 			@include mobile-heading-span;
-			padding-right: 1.6rem;
 		}
 	}
 	&__box {
@@ -319,6 +318,74 @@ body {
 		&-text {
 			@include mobile-text;
 			text-transform: none;
+		}
+	}
+}
+
+///////////////////////// technology
+/// //////////////////////////////
+/// ////////////////////////////////
+
+.technology {
+	@include bg-img('../../assets/technology/background-technology-mobile.jpg');
+	color: $white;
+	&__main {
+		&-heading {
+			@include mobile-heading;
+			margin-bottom: 3.2rem;
+			span {
+				@include mobile-heading-span;
+			}
+		}
+		&-box {
+			@include flex-column-center;
+			gap: 3.2rem;
+		}
+		&-package {
+			width: 100%;
+			&-img {
+				width: 100%;
+				max-height: 17rem;
+			}
+		}
+		&-slider {
+			display: flex;
+			justify-content: space-between;
+			gap: 1.6rem;
+			&-item {
+				@include flex-center;
+				font-family: 'Bellefair', serif;
+				width: 4rem;
+				height: 4rem;
+				color: $white;
+				text-decoration: none;
+				border-radius: 50%;
+				border: 1px solid $white;
+				text-align: center;
+			}
+			&-item.active {
+				background-color: $white;
+				color: $medium-dark-blue;
+			}
+		}
+		&-content {
+			text-align: center;
+			&-heading {
+				font-size: 1.4rem;
+				letter-spacing: 0.236rem;
+				color: $light-grayish-blue;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+			&-name {
+				font-size: 2.4rem;
+				font-family: 'Bellefair', serif;
+				margin: 0.9rem 0 1.6rem;
+				text-transform: uppercase;
+			}
+			&-text {
+				@include mobile-text;
+			}
 		}
 	}
 }

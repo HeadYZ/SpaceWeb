@@ -104,8 +104,8 @@
 
 			&-heading {
 				align-self: start;
-				margin-left: 3.85rem;
 				@include tablet-heading;
+				margin-top: 0;
 				span {
 					padding-right: 1.1rem;
 				}
@@ -158,7 +158,7 @@
 	}
 	//////////////////////////crew
 	/// //////////////////////////////
-			
+
 	.crew {
 		background-image: url('../../assets/crew/background-crew-tablet.jpg');
 		&__main {
@@ -167,8 +167,6 @@
 		}
 		&__heading {
 			align-self: start;
-			margin-top: 5.2rem;
-			margin-left: 3.85rem;
 			@include tablet-heading;
 		}
 		&__box {
@@ -195,6 +193,49 @@
 			&-text {
 				@include tablet-text;
 				width: auto;
+			}
+		}
+	}
+
+	//////////////////////////techonlogy
+	/// /////////////////////////////////
+
+	.technology {
+		background-image: url('../../assets/technology/background-technology-tablet.jpg');
+		&__main {
+			&-heading {
+				text-align: left;
+				@include tablet-heading;
+				margin-bottom: 6rem;
+			}
+			&-box {
+				gap: 5.6rem;
+			}
+			&-package {
+				&-img {
+					max-height: 31rem;
+				}
+			}
+			&-slider {
+				&-item {
+					width: 5.8rem;
+					height: 5.8rem;
+					font-size: 2.4rem;
+				}
+			}
+			&-content {
+				text-align: center;
+				&-heading {
+					font-size: 1.6rem;
+					letter-spacing: 0.27rem;
+				}
+				&-name {
+					font-size: 4rem;
+				}
+				&-text {
+					@include tablet-text;
+					width: 45.8rem;
+				}
 			}
 		}
 	}
