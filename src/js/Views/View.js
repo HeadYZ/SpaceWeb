@@ -7,13 +7,17 @@ export default class View {
 
 		const markup = this._generateMarkup()
 		this._parentEl.innerHTML = ''
-		this._imgEl.src = img
+		if (img) {
+			this._imgEl.src = img
+			this._imgEl.alt = this._data.alt
+		}
 		this._parentEl.innerHTML = markup
 	}
 	_getUserViewport() {
 		const userViewport = window.innerWidth
 		return userViewport < 1280 ? 'mobileImg' : 'desktopImg'
 	}
+
 	_toggleOverlay(action = false) {
 		action ? (this._overlay.style.display = 'block') : (this._overlay.style.display = 'none')
 	}

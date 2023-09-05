@@ -2,6 +2,7 @@
 @use './mixins/flex' as *;
 @use './mixins/box-text' as *;
 @use './mixins/bg-img' as *;
+@use './animations/spinner';
 *,
 *::before,
 *::after {
@@ -17,17 +18,15 @@ body {
 	min-height: 100svh;
 	font-family: 'Barlow Condensed', sans-serif;
 	font-size: 1.6rem;
+	background-color: $medium-dark-blue;
 }
 
 .hidden {
 	overflow: hidden;
 }
 
-//home
-
-.home {
-	@include bg-img('../../assets/home/./background-home-mobile.jpg');
-}
+////////////////////////////////nav
+/// /////////////////////////
 
 .nav {
 	padding: 2rem 1rem 2rem 2rem;
@@ -94,15 +93,18 @@ body {
 	overflow: visible;
 }
 
-.main__home {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.header {
-	&__home {
+/////////////////////////////////home/
+/// //////////////////////////////////////////
+///
+.home {
+	@include bg-img('../../assets/home/./background-home-mobile.jpg');
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__content {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -216,23 +218,10 @@ body {
 		&-text {
 			@include mobile-text;
 		}
-		&-box {
-			position: relative;
-			margin-bottom: 6.5rem;
-		}
-		&-box::after {
-			content: '';
-			position: absolute;
-			bottom: -3.2rem;
-			width: 32.7rem;
-			height: 0.1rem;
-			background-color: $medium-dark-blue;
-		}
 
-		&-box-text {
-			display: flex;
-			flex-direction: column;
-			gap: 1.2rem;
+		&-boxes {
+			position: relative;
+			margin-top: 6.4rem;
 			p {
 				font-family: 'Bellefair', serif;
 				font-size: 2.8rem;
@@ -240,20 +229,30 @@ body {
 				text-transform: uppercase;
 				font-weight: 400;
 			}
+			&-box {
+				display: flex;
+				flex-direction: column;
+				gap: 1.2rem;
+				&--first {
+					margin-bottom: 3.2rem;
+				}
+			}
+			h3 {
+				font-size: 1.4rem;
+				font-weight: 400;
+				text-align: center;
+				letter-spacing: 0.236rem;
+				text-transform: uppercase;
+				color: $light-grayish-blue;
+			}
 		}
-		&-box-text--left {
-			margin-bottom: 3.2rem;
-		}
-		&-box-text--right {
-			margin-bottom: 2rem;
-		}
-		&-h3 {
-			font-size: 1.4rem;
-			font-weight: 400;
-			text-align: center;
-			letter-spacing: 0.236rem;
-			text-transform: uppercase;
-			color: $light-grayish-blue;
+		&-boxes::before {
+			content: '';
+			position: absolute;
+			width: 32.7rem;
+			top: -3.2rem;
+			height: 0.1rem;
+			background-color: $medium-dark-blue;
 		}
 	}
 }
@@ -295,6 +294,7 @@ body {
 			width: 1rem;
 			height: 1rem;
 			opacity: 17.44%;
+			padding: 0.6rem;
 			border-radius: 50%;
 			background-color: $white;
 		}

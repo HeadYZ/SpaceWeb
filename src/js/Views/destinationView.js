@@ -1,51 +1,40 @@
-class DestinationView {
-	#destinations = document.querySelector('.destination__selections')
-	#destinationTime = document.querySelector('.destination__travel-time')
-	#destinationDistance = document.querySelector('.destination__distance')
-	#destinationInfo = document.querySelector('.destination__information')
-	#destinationImg = document.querySelector('.destination__header-img')
+import View from './View'
+class DestinationView extends View {
+	_parentEl = document.querySelector('.destination__main-content')
+	_imgEl = document.querySelector('.destination__header-img')
+	_selections = document.querySelector('.destination__selections')
 
-	addHandlerRender(data) {
+	addHandlerRender(handler) {
 		;['click', 'touchstart'].forEach(event => {
-			this.#destinations.addEventListener(event, e => {
+			this._selections.addEventListener(event, e => {
 				e.preventDefault()
-
-				const destination = e.target.closest('.destination__selections-item')
-
-				if (!destination) return
-
-				const allDestinations = this.#destinations.querySelectorAll('a')
-				allDestinations.forEach(des => {
-					des.classList.remove('active')
-
-					if (des.textContent === destination.textContent) des.classList.add('active')
-				})
-				const destinationData = data.find(dest => dest.destination === destination.textContent)
-
-				const [desInformation, desDistance, desTravelTime] = this.#generateMarkup(destinationData)
-
-				this.#destinationImg.src = destinationData.img
-				this.#destinationImg.alt = destinationData.destination
-				this.#destinationTime.innerHTML = desTravelTime
-				this.#destinationDistance.innerHTML = desDistance
-				this.#destinationInfo.innerHTML = desInformation
+				const selectedDestination = e.target.closest('.destination__selections-item')
+				if (!selectedDestination) return
+				handler(selectedDestination)
+				this._setActiveDestination(selectedDestination)
 			})
 		})
 	}
 
-	#generateMarkup(data) {
-		const desInformation = `
-	<h2 class="destination__main-heading">${data.destination}</h2>
-	<p class="destination__main-text">${data.information}</p>`
-		const desDistance = `
-	<h3 class="destination__main-h3"> Avg. distance</h3>
-	<p>${data.distance}</p>`
-		const desTravelTime = `
-	<h3 class="destination__main-h3"> Est. travel time</h3>
-	<p>${data.travelTime}</p>`
+	_setActiveDestination(selectedDestination) {
+		this._selections.querySelectorAll('a').forEach(link => link.classList.remove('active'))
+		selectedDestination.classList.add('active')
+	}
 
-		return [desInformation, desDistance, desTravelTime]
+	_generateMarkup() {
+		return `
+		<h2 class="destination__main-heading">${this._data.destination}</h2>
+		<p class="destination__main-text">${this._data.information}</p>
+		<div class="destination__main-boxes">
+		  <div class="destination__main-boxes-box destination__main-boxes-box--first">
+			<h3 class="destination__main-h3"> Avg. distance</h3>
+			<p>${this._data.distance}</p>
+		  </div>
+		  <div class="destination__main-boxes-box">
+			<h3 class="destination__main-h3"> Est. travel time</h3>
+			<p>${this._data.travelTime}</p>
+		  </div>
+		</div>`
 	}
 }
-
 export default new DestinationView()

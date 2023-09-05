@@ -6,26 +6,37 @@ import destinationView from './Views/destinationView'
 import crewView from './Views/crewView'
 import technologyView from './Views/technologyView'
 
-const controlTechnologyInfo = async selectedTechData => {
-	try {
-		const [techInfo, imgSize] = model.getTechnologyInfo(selectedTechData)
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 
-		technologyView.render(techInfo, imgSize)
-	} catch (err) {}
+const controlDestinationInfo = selectedDestination => {
+	const [destinationInfo, destinationImg] = model.getDestinationInfo(selectedDestination)
+	destinationView.render(destinationInfo, destinationImg)
+}
+
+const controlCrewInfo = selectedCrew => {
+	const [crewInfo, crewImg] = model.getCrewInfo(selectedCrew)
+
+	crewView.render(crewInfo, crewImg)
+}
+
+const controlTechnologyInfo = selectedTechData => {
+	const [techInfo, imgSize] = model.getTechnologyInfo(selectedTechData)
+
+	technologyView.render(techInfo, imgSize)
 }
 
 const init = () => {
 	navigationView.addHandlerToggleNav()
 	if (window.location.pathname.includes('destinations')) {
-		destinationView.addHandlerRender(model.destinationInformation)
+		destinationView.addHandlerRender(controlDestinationInfo)
 	}
 	if (window.location.pathname.includes('crew')) {
-		crewView.addHandlerRender(model.crewInformation)
+		crewView.addHandlerRender(controlCrewInfo)
 	}
-
-	technologyView.addHandlerSwitchInformation(controlTechnologyInfo)
+	if (window.location.pathname.includes('technology')) {
+		technologyView.addHandlerSwitchInformation(controlTechnologyInfo)
+	}
 }
-
-console.log(technologyView)
 
 init()

@@ -5,10 +5,7 @@
 @use './mixins/bg-img' as *;
 
 @media (min-width: 1280px) {
-	.home {
-		background-image: url('../../assets/home/./background-home-desktop.jpg');
-	}
-
+	////////////////////////////////nav
 	.nav {
 		position: fixed;
 		right: 0;
@@ -28,6 +25,12 @@
 				display: inline;
 				letter-spacing: 0.27rem;
 			}
+			&-link::before {
+				transition: opacity 0.5s;
+			}
+			&-link:hover::before {
+				opacity: 0.5;
+			}
 		}
 	}
 	.nav::before {
@@ -41,8 +44,21 @@
 		z-index: 2;
 	}
 
-	.header {
-		&__home {
+	//////////////////////////////////home
+	/// ///////////////////////////////////////
+	///
+
+	.home {
+		background-image: url('../../assets/home/./background-home-desktop.jpg');
+		min-height: 100vh;
+
+		&__main {
+			@include center;
+			padding-top: 45rem;
+			flex-direction: row;
+			align-items: flex-end;
+		}
+		&__content {
 			margin-left: 13.1rem;
 			margin-bottom: 13.1rem;
 			&-heading {
@@ -54,51 +70,63 @@
 				@include desktop-text;
 			}
 			&-box {
+				position: relative;
 				width: 27.4rem;
 				height: 27.4rem;
 				margin-right: 13.1rem;
 				margin-bottom: 13.1rem;
+				&-link {
+					@include flex-center;
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+				}
+			}
+			&-box::before {
+				content: '';
+				background-color: $white;
+				position: absolute;
+				width: 45rem;
+				height: 45rem;
+				border-radius: 50%;
+				transition: opacity 0.3s;
+				opacity: 0;
+				z-index: -1;
+			}
+			&-box:hover::before {
+				opacity: 10.36%;
 			}
 		}
 	}
 
-	.main__home {
-		flex-direction: row;
-		align-items: flex-end;
-		height: 100vh;
-	}
-
-	////////////////// moon
+	////////////////// destinations
 	/// /////////////////////////////////
 
 	.destination {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		justify-content: space-evenly;
 		background-image: url('../../assets/destination/background-destination-desktop.jpg');
 		@include center;
 		&__header {
 			margin-top: 21.2rem;
-
 			&-heading {
 				@include desktop-heading;
-				margin-left: 16.5rem;
-
+				margin-left: 0;
 				margin-bottom: 9.7rem;
 				span {
 					padding-right: 1.7rem;
 				}
 			}
 			&-img {
-				margin-left: 20.8rem;
 				width: 44.5rem;
+				margin-left: 4.6rem;
 				margin-bottom: 0;
 			}
 		}
 		&__selections {
-			grid-column: 1/3;
-			grid-row: 2/3;
-			align-self: self-start;
+			align-self: start;
 			margin-bottom: 0;
+
 			&-item::before {
 				transition: opacity 0.5s;
 			}
@@ -107,41 +135,20 @@
 			}
 		}
 		&__main {
-			place-items: start;
-			grid-template-rows: 31rem;
-			margin-left: 11.7rem;
-
+			margin-top: 31rem;
 			&-heading {
+				margin-top: 3.7rem;
+				margin-bottom: 1.4rem;
 				font-size: 10rem;
 				text-align: left;
 			}
 			&-text {
 				@include desktop-text;
+				margin-bottom: 9rem;
 			}
-			&-box {
-				grid-column: 1/3;
-				grid-row: 2/3;
-				margin-top: 7.1rem;
-				margin-bottom: 0;
-			}
-			&-box::after {
-				width: 44.4rem;
-			}
-			&-box-text {
-				align-self: flex-start;
-				grid-column: 1/3;
-				grid-row: 2/3;
-				margin-top: 40rem;
-				gap: 1.2rem;
-				text-align: left;
-			}
-			&-box-text--right {
-				grid-column: 2/3;
-				margin-bottom: 0;
-			}
-
-			&-h3 {
-				text-align: left;
+			&-boxes {
+				justify-content: start;
+				gap: 8.6rem;
 			}
 		}
 	}
